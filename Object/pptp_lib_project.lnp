@@ -7,6 +7,7 @@
 ".\object\stm32f10x_gpio.o"
 ".\object\stm32f10x_rcc.o"
 ".\object\stm32f10x_usart.o"
+".\object\pptp_lib.o"
 ".\object\main.o"
 ".\object\system_tick.o"
 ".\object\debug_uart.o"

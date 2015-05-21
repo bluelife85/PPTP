@@ -3,14 +3,6 @@
 
 #include "stm32f10x.h"
 
-#define GENERAL_ERROR_NO 0
-#define GENERAL_ERROR_NOT_CONNECTED 1
-#define GENERAL_ERROR_BAD_FORMAT 2
-#define GENERAL_ERROR_BAD_VALUE 3
-#define GENERAL_ERROR_NO_RESOURCE 4
-#define GENERAL_ERROR_BAD_ID 5
-#define GENERAL_ERROR_PAC_ERR 6
-
 #define null (void*)0
 
 #define htonl(a) (((a & 0xff000000) >> 24) | ((a & 0x00ff0000) >> 8) | ((a & 0x0000ff00) << 8) | ((a & 0x000000ff) << 24))

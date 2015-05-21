@@ -441,6 +441,13 @@
         </Group>
         <Group>
           <GroupName>pptp_lib</GroupName>
+          <Files>
+            <File>
+              <FileName>pptp_lib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\pptp_lib\src\pptp_lib.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>src</GroupName>
