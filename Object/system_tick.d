@@ -1,0 +1,12 @@
+.\object\system_tick.o: src\src\system_tick.c
+.\object\system_tick.o: .\src\inc\system_tick.h
+.\object\system_tick.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
+.\object\system_tick.o: .\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+.\object\system_tick.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\object\system_tick.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.h
+.\object\system_tick.o: .\Libraries\stm32f10x_conf.h
+.\object\system_tick.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h
+.\object\system_tick.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
+.\object\system_tick.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h
+.\object\system_tick.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
+.\object\system_tick.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h

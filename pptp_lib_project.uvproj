@@ -455,6 +455,11 @@
               <FileType>1</FileType>
               <FilePath>.\src\src\main.c</FilePath>
             </File>
+            <File>
+              <FileName>system_tick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\src\system_tick.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
