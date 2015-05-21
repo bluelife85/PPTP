@@ -398,11 +398,6 @@
               <FilePath>.\startup_stm32f10x_hd.s</FilePath>
             </File>
             <File>
-              <FileName>core_cm3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\CMSIS\CM3\CoreSupport\core_cm3.c</FilePath>
-            </File>
-            <File>
               <FileName>system_stm32f10x.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.c</FilePath>

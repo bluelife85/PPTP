@@ -1,1 +1,15 @@
 .\object\main.o: src\src\main.c
+.\object\main.o: .\src\inc\system_tick.h
+.\object\main.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
+.\object\main.o: .\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+.\object\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\object\main.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.h
+.\object\main.o: .\Libraries\stm32f10x_conf.h
+.\object\main.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h
+.\object\main.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
+.\object\main.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h
+.\object\main.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h
+.\object\main.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
+.\object\main.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
+.\object\main.o: .\src\inc\debug_uart.h
+.\object\main.o: .\src\inc\module_uart.h
