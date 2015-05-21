@@ -1,0 +1,12 @@
+.\object\debug_uart.o: src\src\debug_uart.c
+.\object\debug_uart.o: .\src\inc\debug_uart.h
+.\object\debug_uart.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
+.\object\debug_uart.o: .\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+.\object\debug_uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\object\debug_uart.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.h
+.\object\debug_uart.o: .\Libraries\stm32f10x_conf.h
+.\object\debug_uart.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h
+.\object\debug_uart.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
+.\object\debug_uart.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h
+.\object\debug_uart.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
+.\object\debug_uart.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h

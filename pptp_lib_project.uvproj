@@ -460,6 +460,16 @@
               <FileType>1</FileType>
               <FilePath>.\src\src\system_tick.c</FilePath>
             </File>
+            <File>
+              <FileName>debug_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\src\debug_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>module_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\src\module_uart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

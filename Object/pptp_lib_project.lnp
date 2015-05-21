@@ -10,6 +10,8 @@
 ".\object\stm32f10x_usart.o"
 ".\object\main.o"
 ".\object\system_tick.o"
+".\object\debug_uart.o"
+".\object\module_uart.o"
 --library_type=microlib --strict --scatter ".\Object\pptp_lib_project.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
