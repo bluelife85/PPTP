@@ -48,7 +48,7 @@ static struct data_package* ReceivePacket;
 static uint8_t initiates;
 static uint16_t call_id;
 static uint16_t peer_id;
-static uint16_t call_serial;
+static uint16_t call_serial = 1;
 
 void error_code_proc(uint8_t err){
 	
@@ -91,7 +91,7 @@ void request_start_connection(void){
 	pkt.version = htons(0x0100);
 	pkt.framing = htonl(1);
 	pkt.bearer = htonl(1);
-	memcpy(pkt.vendor,"embedded_pptp",13);
+	memcpy(pkt.vendor,"Microsoft",9);
 	
 	Dev.puts((uint8_t*)&pkt, 156);
 }
@@ -109,11 +109,11 @@ void request_outgoing_call(void){
 	pkt.call_id = htons(call_id);
 	pkt.serial_id = htons(call_serial);
 	pkt.min_bps = htonl(300);
-	pkt.max_bps = htonl(1000000);
+	pkt.max_bps = htonl(100000000);
 	pkt.bearer_type = htonl(3);
 	pkt.framinig_type = htonl(3);
 	pkt.window_size = htons(64);
-	pkt.delay = htons(5);
+	pkt.delay = htons(0);
 	
 	Dev.puts((uint8_t*)&pkt, 168);
 }
@@ -122,8 +122,49 @@ uint16_t reply_outgoing_call(uint8_t* data){
 	
 	uint16_t peer;
 	struct outgoing_rep* pkt = (struct outgoing_rep*)data;
+	struct set_link_info req;
+	struct gre_lcp_cli lcp;
 	
 	peer = htons(pkt->call_id);
+	
+	memset(&req, 0x00, 24);
+	
+	req.header.len = htons(24);
+	req.header.pptp_type = htons(1);
+	req.header.magic_cookie = htonl(MAGIC_COOKIE);
+	req.header.control_type = htons(SET_LINK_INFO);
+	req.peer_id = htons(peer);
+	req.send_accm = 0xffffffff;
+	req.receive_accm = 0xffffffff;
+	
+	Dev.puts((uint8_t*)&req, 24);
+	
+	memset(&lcp,0x00,sizeof(struct gre_lcp_cli));
+	lcp.flag = htons(0x3001);
+	lcp.prot_type = htons(0x880b);
+	lcp.key = htonl((0x00190000|htons(peer)));
+	lcp.sequence = 0;
+	lcp.addr = 0xff;
+	lcp.ctrl = 0x03;
+	lcp.protocol = htons(0xc021);
+	lcp.code = 1;
+	lcp.identifier = 0;
+	lcp.len = 21;
+	lcp.max_recv_type = 1;
+	lcp.max_recv_len = 4;
+	lcp.max_recv_unit = htons(1400);
+	lcp.magic_type = 5;
+	lcp.magic_len = 6;
+	lcp.magic_number = (uint32_t)(&call_id) + get_systick();
+	lcp.pfc_type = 7;
+	lcp.pfc_len = 2;
+	lcp.acfc_type = 8;
+	lcp.acfc_len = 2;
+	lcp.cb_type = 13;
+	lcp.cb_len = 3;
+	lcp.cb_operation = 6;
+	
+	Dev.puts((uint8_t*)&lcp, sizeof(struct gre_lcp_cli));
 	
 	return peer;
 }

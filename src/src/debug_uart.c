@@ -46,6 +46,14 @@ void debug_puts(char* s){
 	}
 }
 
+void debug_putlen(uint8_t* s,register uint32_t len){
+	
+	while(len--){
+		USART1->DR = *s++;
+		while((USART1->SR & USART_FLAG_TXE) == 0x00);
+	}
+}
+
 void debug_puthex(void* data,register uint32_t len){
 	
 	uint8_t* c = (uint8_t*)data;
@@ -60,9 +68,10 @@ void debug_puthex(void* data,register uint32_t len){
 	}
 }
 
-Debug Output = {
+const Debug Output = {
 	debug_initialize,
 	debug_putchar,
 	debug_puts,
-	debug_puthex
+	debug_puthex,
+	debug_putlen
 };

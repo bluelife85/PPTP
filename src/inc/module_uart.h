@@ -10,6 +10,6 @@ typedef struct wifi_module_uart_t {
 	uint8_t (*getchar)(uint8_t* c);
 } DevUART;
 
-extern DevUART Dev;
+extern const DevUART Dev;
 
 #endif

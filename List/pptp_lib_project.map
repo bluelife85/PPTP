@@ -17,30 +17,31 @@ Section Cross References
     stm32f10x_usart.o(.text) refers to stm32f10x_rcc.o(.text) for RCC_APB2PeriphResetCmd
     pptp_lib.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
     pptp_lib.o(.text) refers to memcpya.o(.text) for __aeabi_memcpy4
-    pptp_lib.o(.text) refers to malloc.o(i.malloc) for malloc
-    pptp_lib.o(.text) refers to debug_uart.o(.data) for Output
-    pptp_lib.o(.text) refers to module_uart.o(.data) for Dev
+    pptp_lib.o(.text) refers to system_tick.o(.text) for get_systick
+    pptp_lib.o(.text) refers to debug_uart.o(.constdata) for Output
+    pptp_lib.o(.text) refers to module_uart.o(.constdata) for Dev
     pptp_lib.o(.text) refers to pptp_lib.o(.data) for call_id
-    pptp_lib.o(.text) refers to pptp_lib.o(.bss) for pptp_ring_buffer
+    pptp_lib.o(.text) refers to malloc.o(i.malloc) for malloc
     pptp_lib.o(.text) refers to malloc.o(i.free) for free
     pptp_lib.o(.text) refers to rand.o(.text) for rand
+    pptp_lib.o(.text) refers to pptp_lib.o(.bss) for pptp_ring_buffer
     main.o(.text) refers to pptp_lib.o(.text) for pptp_get_pkt
-    main.o(.text) refers to debug_uart.o(.data) for Output
-    main.o(.text) refers to module_uart.o(.data) for Dev
+    main.o(.text) refers to debug_uart.o(.constdata) for Output
+    main.o(.text) refers to module_uart.o(.constdata) for Dev
     system_tick.o(.text) refers to system_tick.o(.data) for systick
     debug_uart.o(.text) refers to stm32f10x_rcc.o(.text) for RCC_APB2PeriphClockCmd
     debug_uart.o(.text) refers to stm32f10x_gpio.o(.text) for GPIO_Init
     debug_uart.o(.text) refers to stm32f10x_usart.o(.text) for USART_Init
     debug_uart.o(.text) refers to debug_uart.o(.data) for ascii_table
+    debug_uart.o(.constdata) refers to debug_uart.o(.text) for debug_initialize
     debug_uart.o(.data) refers to debug_uart.o(.conststring) for .conststring
-    debug_uart.o(.data) refers to debug_uart.o(.text) for debug_initialize
     module_uart.o(.text) refers to stm32f10x_rcc.o(.text) for RCC_APB1PeriphClockCmd
     module_uart.o(.text) refers to stm32f10x_gpio.o(.text) for GPIO_Init
     module_uart.o(.text) refers to stm32f10x_usart.o(.text) for USART_Init
     module_uart.o(.text) refers to misc.o(.text) for NVIC_Init
     module_uart.o(.text) refers to module_uart.o(.data) for uart_write_index
     module_uart.o(.text) refers to module_uart.o(.bss) for uart_ring
-    module_uart.o(.data) refers to module_uart.o(.text) for module_uart_initialize
+    module_uart.o(.constdata) refers to module_uart.o(.text) for module_uart_initialize
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
@@ -107,27 +108,27 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
     ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
     ../clib/microlib/stdlib/rand.c           0x00000000   Number         0  rand.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.c 0x00000000   Number         0  system_stm32f10x.o ABSOLUTE
     Libraries\STM32F10x_StdPeriph_Driver\src\misc.c 0x00000000   Number         0  misc.o ABSOLUTE
@@ -166,47 +167,49 @@ Image Symbol Table
     .text                                    0x08000790   Section        0  stm32f10x_rcc.o(.text)
     .text                                    0x08000b34   Section        0  stm32f10x_usart.o(.text)
     .text                                    0x08000f3c   Section        0  pptp_lib.o(.text)
-    .text                                    0x08001764   Section        0  main.o(.text)
-    .text                                    0x080017a4   Section        0  system_tick.o(.text)
-    .text                                    0x08001828   Section        0  debug_uart.o(.text)
-    .text                                    0x08001920   Section        0  module_uart.o(.text)
-    .text                                    0x08001a88   Section        0  rand.o(.text)
-    .text                                    0x08001aac   Section        0  memcpya.o(.text)
-    .text                                    0x08001ad0   Section        0  memseta.o(.text)
-    .text                                    0x08001af4   Section       36  init.o(.text)
-    i.__scatterload_copy                     0x08001b18   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08001b26   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08001b28   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.free                                   0x08001b38   Section        0  malloc.o(i.free)
-    i.malloc                                 0x08001b88   Section        0  malloc.o(i.malloc)
-    .conststring                             0x08001bf4   Section       17  debug_uart.o(.conststring)
+    .text                                    0x08001878   Section        0  main.o(.text)
+    .text                                    0x080018b8   Section        0  system_tick.o(.text)
+    .text                                    0x0800193c   Section        0  debug_uart.o(.text)
+    .text                                    0x08001a58   Section        0  module_uart.o(.text)
+    .text                                    0x08001bc0   Section        0  rand.o(.text)
+    .text                                    0x08001be4   Section        0  memcpya.o(.text)
+    .text                                    0x08001c08   Section        0  memseta.o(.text)
+    .text                                    0x08001c2c   Section       36  init.o(.text)
+    i.__scatterload_copy                     0x08001c50   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08001c5e   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08001c60   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.free                                   0x08001c70   Section        0  malloc.o(i.free)
+    i.malloc                                 0x08001cc0   Section        0  malloc.o(i.malloc)
+    .constdata                               0x08001d2c   Section       20  debug_uart.o(.constdata)
+    .constdata                               0x08001d40   Section       16  module_uart.o(.constdata)
+    .conststring                             0x08001d50   Section       17  debug_uart.o(.conststring)
     .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
     .data                                    0x20000014   Section       20  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000014   Data          16  stm32f10x_rcc.o(.data)
     ADCPrescTable                            0x20000024   Data           4  stm32f10x_rcc.o(.data)
-    .data                                    0x20000028   Section       16  pptp_lib.o(.data)
-    pptp_ring_index                          0x20000028   Data           4  pptp_lib.o(.data)
-    ReceivePacket                            0x2000002c   Data           4  pptp_lib.o(.data)
-    initiates                                0x20000030   Data           1  pptp_lib.o(.data)
-    call_id                                  0x20000032   Data           2  pptp_lib.o(.data)
-    peer_id                                  0x20000034   Data           2  pptp_lib.o(.data)
-    call_serial                              0x20000036   Data           2  pptp_lib.o(.data)
-    .data                                    0x20000038   Section        4  system_tick.o(.data)
-    systick                                  0x20000038   Data           4  system_tick.o(.data)
-    .data                                    0x2000003c   Section       20  debug_uart.o(.data)
-    .data                                    0x20000050   Section       24  module_uart.o(.data)
-    uart_write_index                         0x20000060   Data           4  module_uart.o(.data)
-    uart_read_index                          0x20000064   Data           4  module_uart.o(.data)
-    .data                                    0x20000068   Section        4  rand.o(.data)
-    _rand_state                              0x20000068   Data           4  rand.o(.data)
-    .data                                    0x2000006c   Section        4  mvars.o(.data)
-    .data                                    0x20000070   Section        4  mvars.o(.data)
-    .bss                                     0x20000074   Section      512  pptp_lib.o(.bss)
-    pptp_ring_buffer                         0x20000074   Data         512  pptp_lib.o(.bss)
-    .bss                                     0x20000274   Section      512  module_uart.o(.bss)
-    uart_ring                                0x20000274   Data         512  module_uart.o(.bss)
-    HEAP                                     0x20000478   Section    16384  startup_stm32f10x_hd.o(HEAP)
-    STACK                                    0x20004478   Section     8192  startup_stm32f10x_hd.o(STACK)
+    .data                                    0x20000028   Section       18  pptp_lib.o(.data)
+    call_serial                              0x20000028   Data           2  pptp_lib.o(.data)
+    pptp_ring_index                          0x2000002c   Data           4  pptp_lib.o(.data)
+    ReceivePacket                            0x20000030   Data           4  pptp_lib.o(.data)
+    initiates                                0x20000034   Data           1  pptp_lib.o(.data)
+    call_id                                  0x20000036   Data           2  pptp_lib.o(.data)
+    peer_id                                  0x20000038   Data           2  pptp_lib.o(.data)
+    .data                                    0x2000003c   Section        4  system_tick.o(.data)
+    systick                                  0x2000003c   Data           4  system_tick.o(.data)
+    .data                                    0x20000040   Section        4  debug_uart.o(.data)
+    .data                                    0x20000044   Section        8  module_uart.o(.data)
+    uart_write_index                         0x20000044   Data           4  module_uart.o(.data)
+    uart_read_index                          0x20000048   Data           4  module_uart.o(.data)
+    .data                                    0x2000004c   Section        4  rand.o(.data)
+    _rand_state                              0x2000004c   Data           4  rand.o(.data)
+    .data                                    0x20000050   Section        4  mvars.o(.data)
+    .data                                    0x20000054   Section        4  mvars.o(.data)
+    .bss                                     0x20000058   Section      512  pptp_lib.o(.bss)
+    pptp_ring_buffer                         0x20000058   Data         512  pptp_lib.o(.bss)
+    .bss                                     0x20000258   Section      512  module_uart.o(.bss)
+    uart_ring                                0x20000258   Data         512  module_uart.o(.bss)
+    HEAP                                     0x20000458   Section    16384  startup_stm32f10x_hd.o(HEAP)
+    STACK                                    0x20004458   Section     8192  startup_stm32f10x_hd.o(STACK)
 
     Global Symbols
 
@@ -387,61 +390,62 @@ Image Symbol Table
     USART_ClearITPendingBit                  0x08000f09   Thumb Code    52  stm32f10x_usart.o(.text)
     error_code_proc                          0x08000f3d   Thumb Code   102  pptp_lib.o(.text)
     request_start_connection                 0x08000fa3   Thumb Code    76  pptp_lib.o(.text)
-    request_outgoing_call                    0x08000fef   Thumb Code   122  pptp_lib.o(.text)
-    reply_outgoing_call                      0x08001069   Thumb Code    18  pptp_lib.o(.text)
-    reply_echo                               0x0800107b   Thumb Code    74  pptp_lib.o(.text)
-    request_stop_connection                  0x080010c5   Thumb Code    56  pptp_lib.o(.text)
-    reply_stop_connection                    0x080010fd   Thumb Code   130  pptp_lib.o(.text)
-    call_disconnect_noti_pkt                 0x0800117f   Thumb Code   104  pptp_lib.o(.text)
-    noti_call_disconn                        0x080011e7   Thumb Code    88  pptp_lib.o(.text)
-    search_last                              0x0800123f   Thumb Code    16  pptp_lib.o(.text)
-    pptp_get_pkt                             0x0800124f   Thumb Code   180  pptp_lib.o(.text)
-    pptp_process                             0x08001303   Thumb Code   742  pptp_lib.o(.text)
-    main                                     0x08001765   Thumb Code    52  main.o(.text)
-    systick_init                             0x080017a5   Thumb Code    74  system_tick.o(.text)
-    get_systick                              0x080017ef   Thumb Code     6  system_tick.o(.text)
-    get_passed_tick                          0x080017f5   Thumb Code    24  system_tick.o(.text)
-    SysTick_Handler                          0x0800180d   Thumb Code    12  system_tick.o(.text)
-    debug_initialize                         0x08001829   Thumb Code   122  debug_uart.o(.text)
-    debug_putchar                            0x080018a3   Thumb Code    20  debug_uart.o(.text)
-    debug_puts                               0x080018b7   Thumb Code    32  debug_uart.o(.text)
-    debug_puthex                             0x080018d7   Thumb Code    62  debug_uart.o(.text)
-    module_uart_initialize                   0x08001921   Thumb Code   184  module_uart.o(.text)
-    module_uart_putchar                      0x080019d9   Thumb Code    18  module_uart.o(.text)
-    module_uart_puts                         0x080019eb   Thumb Code    32  module_uart.o(.text)
-    module_uart_getchar                      0x08001a0b   Thumb Code    56  module_uart.o(.text)
-    UART5_IRQHandler                         0x08001a43   Thumb Code    40  module_uart.o(.text)
-    rand                                     0x08001a89   Thumb Code    20  rand.o(.text)
-    srand                                    0x08001a9d   Thumb Code     6  rand.o(.text)
-    __aeabi_memcpy                           0x08001aad   Thumb Code    36  memcpya.o(.text)
-    __aeabi_memcpy4                          0x08001aad   Thumb Code     0  memcpya.o(.text)
-    __aeabi_memcpy8                          0x08001aad   Thumb Code     0  memcpya.o(.text)
-    __aeabi_memset                           0x08001ad1   Thumb Code    14  memseta.o(.text)
-    __aeabi_memset4                          0x08001ad1   Thumb Code     0  memseta.o(.text)
-    __aeabi_memset8                          0x08001ad1   Thumb Code     0  memseta.o(.text)
-    __aeabi_memclr                           0x08001adf   Thumb Code     4  memseta.o(.text)
-    __aeabi_memclr4                          0x08001adf   Thumb Code     0  memseta.o(.text)
-    __aeabi_memclr8                          0x08001adf   Thumb Code     0  memseta.o(.text)
-    _memset$wrapper                          0x08001ae3   Thumb Code    18  memseta.o(.text)
-    __scatterload                            0x08001af5   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x08001af5   Thumb Code     0  init.o(.text)
-    __scatterload_copy                       0x08001b19   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08001b27   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08001b29   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    free                                     0x08001b39   Thumb Code    76  malloc.o(i.free)
-    malloc                                   0x08001b89   Thumb Code    92  malloc.o(i.malloc)
-    Region$$Table$$Base                      0x08001c08   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08001c28   Number         0  anon$$obj.o(Region$$Table)
+    request_outgoing_call                    0x08000fef   Thumb Code   120  pptp_lib.o(.text)
+    reply_outgoing_call                      0x08001067   Thumb Code   298  pptp_lib.o(.text)
+    reply_echo                               0x08001191   Thumb Code    74  pptp_lib.o(.text)
+    request_stop_connection                  0x080011db   Thumb Code    56  pptp_lib.o(.text)
+    reply_stop_connection                    0x08001213   Thumb Code   130  pptp_lib.o(.text)
+    call_disconnect_noti_pkt                 0x08001295   Thumb Code   104  pptp_lib.o(.text)
+    noti_call_disconn                        0x080012fd   Thumb Code   442  pptp_lib.o(.text)
+    search_last                              0x080014b7   Thumb Code    16  pptp_lib.o(.text)
+    pptp_get_pkt                             0x080014c7   Thumb Code   180  pptp_lib.o(.text)
+    pptp_process                             0x0800157b   Thumb Code   372  pptp_lib.o(.text)
+    main                                     0x08001879   Thumb Code    52  main.o(.text)
+    systick_init                             0x080018b9   Thumb Code    74  system_tick.o(.text)
+    get_systick                              0x08001903   Thumb Code     6  system_tick.o(.text)
+    get_passed_tick                          0x08001909   Thumb Code    24  system_tick.o(.text)
+    SysTick_Handler                          0x08001921   Thumb Code    12  system_tick.o(.text)
+    debug_initialize                         0x0800193d   Thumb Code   122  debug_uart.o(.text)
+    debug_putchar                            0x080019b7   Thumb Code    20  debug_uart.o(.text)
+    debug_puts                               0x080019cb   Thumb Code    32  debug_uart.o(.text)
+    debug_putlen                             0x080019eb   Thumb Code    34  debug_uart.o(.text)
+    debug_puthex                             0x08001a0d   Thumb Code    62  debug_uart.o(.text)
+    module_uart_initialize                   0x08001a59   Thumb Code   184  module_uart.o(.text)
+    module_uart_putchar                      0x08001b11   Thumb Code    18  module_uart.o(.text)
+    module_uart_puts                         0x08001b23   Thumb Code    32  module_uart.o(.text)
+    module_uart_getchar                      0x08001b43   Thumb Code    56  module_uart.o(.text)
+    UART5_IRQHandler                         0x08001b7b   Thumb Code    40  module_uart.o(.text)
+    rand                                     0x08001bc1   Thumb Code    20  rand.o(.text)
+    srand                                    0x08001bd5   Thumb Code     6  rand.o(.text)
+    __aeabi_memcpy                           0x08001be5   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x08001be5   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x08001be5   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memset                           0x08001c09   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x08001c09   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x08001c09   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x08001c17   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x08001c17   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x08001c17   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x08001c1b   Thumb Code    18  memseta.o(.text)
+    __scatterload                            0x08001c2d   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x08001c2d   Thumb Code     0  init.o(.text)
+    __scatterload_copy                       0x08001c51   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08001c5f   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08001c61   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    free                                     0x08001c71   Thumb Code    76  malloc.o(i.free)
+    malloc                                   0x08001cc1   Thumb Code    92  malloc.o(i.malloc)
+    Output                                   0x08001d2c   Data          20  debug_uart.o(.constdata)
+    Dev                                      0x08001d40   Data          16  module_uart.o(.constdata)
+    Region$$Table$$Base                      0x08001d64   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001d84   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
-    ascii_table                              0x2000003c   Data           4  debug_uart.o(.data)
-    Output                                   0x20000040   Data          16  debug_uart.o(.data)
-    Dev                                      0x20000050   Data          16  module_uart.o(.data)
-    __microlib_freelist                      0x2000006c   Data           4  mvars.o(.data)
-    __microlib_freelist_initialised          0x20000070   Data           4  mvars.o(.data)
-    __heap_base                              0x20000478   Data           0  startup_stm32f10x_hd.o(HEAP)
-    __heap_limit                             0x20004478   Data           0  startup_stm32f10x_hd.o(HEAP)
-    __initial_sp                             0x20006478   Data           0  startup_stm32f10x_hd.o(STACK)
+    ascii_table                              0x20000040   Data           4  debug_uart.o(.data)
+    __microlib_freelist                      0x20000050   Data           4  mvars.o(.data)
+    __microlib_freelist_initialised          0x20000054   Data           4  mvars.o(.data)
+    __heap_base                              0x20000458   Data           0  startup_stm32f10x_hd.o(HEAP)
+    __heap_limit                             0x20004458   Data           0  startup_stm32f10x_hd.o(HEAP)
+    __initial_sp                             0x20006458   Data           0  startup_stm32f10x_hd.o(STACK)
 
 
 
@@ -451,22 +455,22 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001c9c, Max: 0x00040000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001ddc, Max: 0x00040000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00001c28, Max: 0x00040000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00001d84, Max: 0x00040000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x00000130   Data   RO            3    RESET               startup_stm32f10x_hd.o
-    0x08000130   0x00000000   Code   RO          288  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000130   0x00000004   Code   RO          328    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x08000134   0x00000004   Code   RO          331    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000138   0x00000000   Code   RO          333    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000138   0x00000000   Code   RO          335    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000138   0x00000008   Code   RO          336    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000140   0x00000000   Code   RO          338    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x08000140   0x00000000   Code   RO          340    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x08000140   0x00000004   Code   RO          329    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000130   0x00000000   Code   RO          290  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000130   0x00000004   Code   RO          330    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x08000134   0x00000004   Code   RO          333    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000138   0x00000000   Code   RO          335    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000138   0x00000000   Code   RO          337    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000138   0x00000008   Code   RO          338    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000140   0x00000000   Code   RO          340    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000140   0x00000000   Code   RO          342    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000140   0x00000004   Code   RO          331    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x08000144   0x00000024   Code   RO            4    .text               startup_stm32f10x_hd.o
     0x08000168   0x000001dc   Code   RO           10    .text               system_stm32f10x.o
     0x08000344   0x00000018   Code   RO           57    .text               stm32f10x_it.o
@@ -474,44 +478,46 @@ Memory Map of the image
     0x08000438   0x00000358   Code   RO          134    .text               stm32f10x_gpio.o
     0x08000790   0x000003a4   Code   RO          149    .text               stm32f10x_rcc.o
     0x08000b34   0x00000408   Code   RO          166    .text               stm32f10x_usart.o
-    0x08000f3c   0x00000828   Code   RO          181    .text               pptp_lib.o
-    0x08001764   0x00000040   Code   RO          220    .text               main.o
-    0x080017a4   0x00000084   Code   RO          232    .text               system_tick.o
-    0x08001828   0x000000f8   Code   RO          250    .text               debug_uart.o
-    0x08001920   0x00000168   Code   RO          269    .text               module_uart.o
-    0x08001a88   0x00000024   Code   RO          291    .text               mc_w.l(rand.o)
-    0x08001aac   0x00000024   Code   RO          294    .text               mc_w.l(memcpya.o)
-    0x08001ad0   0x00000024   Code   RO          296    .text               mc_w.l(memseta.o)
-    0x08001af4   0x00000024   Code   RO          344    .text               mc_w.l(init.o)
-    0x08001b18   0x0000000e   Code   RO          348    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08001b26   0x00000002   Code   RO          349    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08001b28   0x0000000e   Code   RO          350    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08001b36   0x00000002   PAD
-    0x08001b38   0x00000050   Code   RO          300    i.free              mc_w.l(malloc.o)
-    0x08001b88   0x0000006c   Code   RO          301    i.malloc            mc_w.l(malloc.o)
-    0x08001bf4   0x00000011   Data   RO          251    .conststring        debug_uart.o
-    0x08001c05   0x00000003   PAD
-    0x08001c08   0x00000020   Data   RO          346    Region$$Table       anon$$obj.o
+    0x08000f3c   0x0000093c   Code   RO          181    .text               pptp_lib.o
+    0x08001878   0x00000040   Code   RO          220    .text               main.o
+    0x080018b8   0x00000084   Code   RO          232    .text               system_tick.o
+    0x0800193c   0x0000011c   Code   RO          250    .text               debug_uart.o
+    0x08001a58   0x00000168   Code   RO          270    .text               module_uart.o
+    0x08001bc0   0x00000024   Code   RO          293    .text               mc_w.l(rand.o)
+    0x08001be4   0x00000024   Code   RO          296    .text               mc_w.l(memcpya.o)
+    0x08001c08   0x00000024   Code   RO          298    .text               mc_w.l(memseta.o)
+    0x08001c2c   0x00000024   Code   RO          346    .text               mc_w.l(init.o)
+    0x08001c50   0x0000000e   Code   RO          350    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08001c5e   0x00000002   Code   RO          351    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08001c60   0x0000000e   Code   RO          352    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08001c6e   0x00000002   PAD
+    0x08001c70   0x00000050   Code   RO          302    i.free              mc_w.l(malloc.o)
+    0x08001cc0   0x0000006c   Code   RO          303    i.malloc            mc_w.l(malloc.o)
+    0x08001d2c   0x00000014   Data   RO          251    .constdata          debug_uart.o
+    0x08001d40   0x00000010   Data   RO          272    .constdata          module_uart.o
+    0x08001d50   0x00000011   Data   RO          252    .conststring        debug_uart.o
+    0x08001d61   0x00000003   PAD
+    0x08001d64   0x00000020   Data   RO          348    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00006478, Max: 0x0000c000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00006458, Max: 0x0000c000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000   0x00000014   Data   RW           11    .data               system_stm32f10x.o
     0x20000014   0x00000014   Data   RW          150    .data               stm32f10x_rcc.o
-    0x20000028   0x00000010   Data   RW          183    .data               pptp_lib.o
-    0x20000038   0x00000004   Data   RW          233    .data               system_tick.o
-    0x2000003c   0x00000014   Data   RW          252    .data               debug_uart.o
-    0x20000050   0x00000018   Data   RW          271    .data               module_uart.o
-    0x20000068   0x00000004   Data   RW          292    .data               mc_w.l(rand.o)
-    0x2000006c   0x00000004   Data   RW          342    .data               mc_w.l(mvars.o)
-    0x20000070   0x00000004   Data   RW          343    .data               mc_w.l(mvars.o)
-    0x20000074   0x00000200   Zero   RW          182    .bss                pptp_lib.o
-    0x20000274   0x00000200   Zero   RW          270    .bss                module_uart.o
-    0x20000474   0x00000004   PAD
-    0x20000478   0x00004000   Zero   RW            2    HEAP                startup_stm32f10x_hd.o
-    0x20004478   0x00002000   Zero   RW            1    STACK               startup_stm32f10x_hd.o
+    0x20000028   0x00000012   Data   RW          183    .data               pptp_lib.o
+    0x2000003a   0x00000002   PAD
+    0x2000003c   0x00000004   Data   RW          233    .data               system_tick.o
+    0x20000040   0x00000004   Data   RW          253    .data               debug_uart.o
+    0x20000044   0x00000008   Data   RW          273    .data               module_uart.o
+    0x2000004c   0x00000004   Data   RW          294    .data               mc_w.l(rand.o)
+    0x20000050   0x00000004   Data   RW          344    .data               mc_w.l(mvars.o)
+    0x20000054   0x00000004   Data   RW          345    .data               mc_w.l(mvars.o)
+    0x20000058   0x00000200   Zero   RW          182    .bss                pptp_lib.o
+    0x20000258   0x00000200   Zero   RW          271    .bss                module_uart.o
+    0x20000458   0x00004000   Zero   RW            2    HEAP                startup_stm32f10x_hd.o
+    0x20004458   0x00002000   Zero   RW            1    STACK               startup_stm32f10x_hd.o
 
 
 ==============================================================================
@@ -521,11 +527,11 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       248         12         17         20          0       2118   debug_uart.o
+       284         14         37          4          0       2335   debug_uart.o
         64         12          0          0          0        431   main.o
        220         20          0          0          0      12341   misc.o
-       360         30          0         24        512       2345   module_uart.o
-      2088        774          0         16        512       8411   pptp_lib.o
+       360         30         16          8        512       2349   module_uart.o
+      2364        770          0         18        512       8611   pptp_lib.o
         36          8        304          0      24576        756   startup_stm32f10x_hd.o
        856         40          0          0          0      14105   stm32f10x_gpio.o
         24          0          0          0          0     206030   stm32f10x_it.o
@@ -535,9 +541,9 @@ Image component sizes
        132         16          0          4          0      16522   system_tick.o
 
     ----------------------------------------------------------------------
-      6468       1014        356        104      25604     315754   Object Totals
+      6780       1012        392         76      25600     316175   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         0          0          3          0          4          0   (incl. Padding)
+         0          0          3          2          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -579,15 +585,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      6852       1060        356        116      25604     314994   Grand Totals
-      6852       1060        356        116      25604     314994   ELF Image Totals
-      6852       1060        356        116          0          0   ROM Totals
+      7164       1058        392         88      25600     315415   Grand Totals
+      7164       1058        392         88      25600     315415   ELF Image Totals
+      7164       1058        392         88          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 7208 (   7.04kB)
-    Total RW  Size (RW Data + ZI Data)             25720 (  25.12kB)
-    Total ROM Size (Code + RO Data + RW Data)       7324 (   7.15kB)
+    Total RO  Size (Code + RO Data)                 7556 (   7.38kB)
+    Total RW  Size (RW Data + ZI Data)             25688 (  25.09kB)
+    Total ROM Size (Code + RO Data + RW Data)       7644 (   7.46kB)
 
 ==============================================================================
 

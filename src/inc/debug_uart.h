@@ -8,9 +8,10 @@ typedef struct debug_out_t{
 	void (*putchar)(char c);
 	void (*puts)(char* s);
 	void (*puthex)(void* data,register uint32_t len);
+	void (*putlen)(uint8_t* data, register uint32_t len);
 }Debug;
 
 extern const char* ascii_table;
-extern Debug Output;
+extern const Debug Output;
 
 #endif

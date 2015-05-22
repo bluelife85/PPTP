@@ -89,7 +89,7 @@ void UART5_IRQHandler(void){
 		uart_write_index = 0;
 }
 
-DevUART Dev = {
+const DevUART Dev = {
 	module_uart_initialize,
 	module_uart_putchar,
 	module_uart_puts,
